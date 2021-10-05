@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 {
 	va_list vl;
 	int i = 0, j = 0;
-	char buff[100] = {0}, tmp[20];
+	char buff[100] = {0};
 	char *str_arg;
 
 	va_start(vl, format);
@@ -32,30 +32,6 @@ int _printf(const char *format, ...)
 					{
 						buff[j] = (char)va_arg(vl, int);
 						j++;
-						break;
-					}
-				/* Convert decimal */
-				case 'd':
-					{
-						_itoa(va_arg(vl, int), tmp, 10);
-						strcpy(&buff[j], tmp);
-						j += strlen(tmp);
-						break;
-					}
-				/* Convert hex */
-				case 'x':
-					{
-						_itoa(va_arg(vl, int), tmp, 16);
-						strcpy(&buff[j], tmp);
-						j += strlen(tmp);
-						break;
-					}
-				/* Convert octal */
-				case 'o':
-					{
-						_itoa(va_arg(vl, int), tmp, 8);
-						strcpy(&buff[j], tmp);
-						j += strlen(tmp);
 						break;
 					}
 				/* copy string */
