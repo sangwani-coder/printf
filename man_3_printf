@@ -1,0 +1,30 @@
+.TH man "0ctober 5 2021" "_printf man page"
+.SH NAME
+.B_printf
+- A simple implementation of the printf function
+.SH SYNOPSIS
+To use this function the "#include main.h" header is needed.
+.SH DESCRIPTION
+The printf() funciton produces out output according to a format which is described.
+This function writes its output to stdout, the standard output stream.
+.SH USAGE
+To use _printf you have to use the following characters preceeded by the percent(%) symbol.
+.RS 3
+%c: To print characters
+.RS 0
+%s: To print a string
+.RS 0
+%:  To print a percent symbol
+.RS 0
+%d: To print an integer
+.RS 0 
+%i: To print an integer
+.SH RETURN VALUES
+The _printf() function returns an integer representing the number of symbols
+printed to (excluding the null byte used to end output to strings).
+.SH SEE ALSO
+.I print(f)
+.SH. BUGS
+No known bugs.
+.SH AUTHOR
+Peter Sangwani Zyambo
