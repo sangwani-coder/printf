@@ -30,6 +30,8 @@ int unsigned_int(va_list);
 int print_binary(va_list);
 int print_hex(va_list list);
 int print_unsigned_num(unsigned int n);
+int print_octal(va_list list);
+int print_heX(va_list list);
 
 /*Helper functions*/
 char *rev_string(char *);
