@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
@@ -14,44 +13,22 @@
 
 int _printf(const char *format, ...)
 {
-	va_list vl;
-	int i = 0, j = 0;
-	char buff[100] = {0};
-	char *str_arg;
+	int printed_chars;
 
-	va_start(vl, format);
-	while (format && format[i])
+	convert_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{NULL, NULL},
+	};
+	va_list arg_list;
+
+	if (format == NULL)
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			switch (format[i])
-			{
-				/* Convert char */
-				case 'c':
-					{
-						buff[j] = (char)va_arg(vl, int);
-						j++;
-						break;
-					}
-				/* copy string */
-				case 's':
-					{
-						str_arg = va_arg(vl, char*);
-						strcpy(&buff[j], str_arg);
-						j += strlen(str_arg);
-						break;
-					}
-			}
-		}
-		else
-		{
-			buff[j] = format[i];
-			j++;
-		}
-		i++;
+		return (-1);
 	}
-	fwrite(buff, j, 1, stdout);
-	va_end(vl);
-	return (j);
+	va_start(arg_list, format);
+	/*call parser function*/
+	printed_chars = parser(format, f_list, arg_list);
+	va_end(arg_list);
+	return (printed_chars);
 }

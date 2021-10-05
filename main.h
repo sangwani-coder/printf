@@ -1,8 +1,27 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdio.h>
 
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdarg.h>
+/**
+ * struct convert - defines a struct for sumbols and functions
+ *
+ * @sym: The operator
+ * @f: the function associated to symbol
+ */
+
+typedef struct convert
+{
+	char *sym;
+	int (*f)(va_list);
+} convert_t;
+
+/*Main functions*/
+int parser(const char *format, convert_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
-char *_strrev (char *str);
-char * _itoa(int i, char *strout, int base);
+int _putchar(char c);
+int print_char(va_list);
+int print_string(va_list);
+
 #endif
