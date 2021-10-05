@@ -30,3 +30,13 @@ int print_string(va_list list)
 	}
 	return (i);
 }
+/**
+ * print_percent - prints the percent symbol
+ * @list: list or parameters
+ * Return: number of characters printed
+ */
+int print_percent(__attribute__((unused))va_list list)
+{
+	_putchar('%');
+	return (1);
+}
