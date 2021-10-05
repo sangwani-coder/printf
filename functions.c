@@ -48,8 +48,28 @@ int print_percent(__attribute__((unused))va_list list)
  */
 int print_int(va_list list)
 {
-	int num_length;
+	int len;
 
-	num_length = print_num(list);
-	return (num_length);
+	len = print_num(list);
+	return (len);
+}
+
+/**
+ * unsigned_int - prints unsigned int
+ * @list: list of all arguments
+ * Return: a count of numbers
+ */
+int unsigned_int(va_list list)
+{
+	unsigned int num;
+
+	num = va_arg(list, unsigned int);
+
+	if (num == 0)
+	{
+		return (print_unsigned_num(num));
+	}
+	if (num < 1)
+		return (-1);
+	return (print_unsigned_num(num));
 }
