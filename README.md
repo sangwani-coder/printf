@@ -1,4 +1,4 @@
-Printf ALX Team project by Biruk Merage AND Peter Zyambo.
+**Printf project.**
 
 **Synopis**
 Implement a printf function in c that formats and prints data"
@@ -10,3 +10,6 @@ The available conversion specifiers are:
 
 - %c: Print a single character
 - %s: Print a string of characters
+- %%: print a percent sign
+- %d: print an integer
+- %i: print and integer

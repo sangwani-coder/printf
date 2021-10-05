@@ -40,3 +40,16 @@ int print_percent(__attribute__((unused))va_list list)
 	_putchar('%');
 	return (1);
 }
+
+/**
+ * print_int - prints an integer
+ * @list: list of parameters
+ * Return: number of characters printed
+ */
+int print_int(va_list list)
+{
+	int len;
+
+	len = print_num(list);
+	return (len);
+}
